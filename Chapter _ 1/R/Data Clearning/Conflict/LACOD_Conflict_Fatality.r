@@ -1,7 +1,7 @@
 ################################################################################
 # SCRIPT: Conflict (lacod) in Nigeria (2009-2019)
 # AUTHOR: Ryuto Minami
-# DATE: [Insert Date]
+# DATE: [2014-10-09]
 # DESCRIPTION:
 # This script:
 # 1. Cleans and filters conflict data for Nigeria (2009-2019)

@@ -18,18 +18,18 @@ library(sf)
 library(RColorBrewer)
 
 ################################################################################
-### 1. Load and Filter Conflict Data
+# Load and Filter Conflict Data
 ################################################################################
 
 # Load conflict dataset
 full_conf_df <- read.csv("lacod_full.csv")
 
 # Filter for Nigeria (2009-2019)
-Nigeria_ACREDA <- full_conf_df |> 
+Nigeria_ACRED <- full_conf_df |> 
   filter(COUNTRY == "Nigeria", YEAR >= 2009, YEAR <= 2019)
 
 ################################################################################
-### 2. Load and Process Shapefile Data
+###  Load and Process Shapefile Data
 ################################################################################
 
 # Load Nigeria administrative boundaries shapefile
@@ -39,7 +39,7 @@ N_map <- st_read("pass/gadm41_NGA_2.shp")
 N_map <- N_map |> rename(ADMIN2 = NAME_2)
 
 ################################################################################
-### 3. Function to Aggregate Fatalities by District
+###  Function to Aggregate Fatalities by District
 ################################################################################
 
 aggregate_fatalities <- function(data, start_year, end_year) {
@@ -51,7 +51,7 @@ aggregate_fatalities <- function(data, start_year, end_year) {
 }
 
 ################################################################################
-### 4. Function to Generate Conflict Maps
+### Function to Generate Conflict Maps
 ################################################################################
 
 generate_conflict_map <- function(N_map, fatalities_df, title, filename) {
@@ -74,7 +74,7 @@ generate_conflict_map <- function(N_map, fatalities_df, title, filename) {
 }
 
 ################################################################################
-### 5. Generate Maps for Overall and Wave-Based Fatalities
+### Generate Maps for Overall and Wave-Based Fatalities
 ################################################################################
 
 # Overall Fatalities (2009-2019)
@@ -100,7 +100,7 @@ for (wave in waves) {
 }
 
 ################################################################################
-### 6. Fatalities by Quantiles (2018-2019)
+### Fatalities by Quantiles (2018-2019)
 ################################################################################
 
 # Merge wave 4 data for quantile analysis
