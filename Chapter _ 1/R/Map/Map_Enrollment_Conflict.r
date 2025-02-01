@@ -5,7 +5,6 @@
 # DATE: 2024-12-13
 # DESCRIPTION:
 # This script visualizes conflict intensity across Nigerian states and overlays 
-# school locations using both **ggplot2** and **tmap** for static and interactive maps.
 #
 # STEPS:
 # 1. Loads the required spatial libraries (`ggplot2`, `sf`, `ggspatial`, `tmap`).
