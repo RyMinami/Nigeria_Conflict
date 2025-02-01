@@ -4,7 +4,7 @@
 
 # Description:
 # Data clearning for household and individual-level survey data.
-# It performs the following steps:
+
 # 1. Modify key variables (e.g., gender, enrollment, religion).
 # 2. Rename key variables for clarity.
 # 3. Generate new features, including household size and years of schooling.
