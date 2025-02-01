@@ -14,11 +14,11 @@
 ################################################################################
 
 
-### 1. Load Household & Conflict Data
-df_household <- read.csv("pass/export_data.csv")
-df_ACRED <- read.csv("pass/export_data2.csv")
+###  Load Household & Conflict Data
+df_household <- read.csv("pass/household_data.csv")
+df_lacod <- read.csv("pass/lacod_data.csv")
 
-### 2. Data Cleaning & Preprocessing
+###  Data Cleaning & Preprocessing
 
 # Drop missing values in household data
 df_household <- df_household |> drop_na(lat_dd_mod, lon_dd_mod)
@@ -36,7 +36,7 @@ conflict_sf_utm <- df_ACRED |>
     st_as_sf(coords = c("latitude", "longitude"), crs = 4326) |> 
     st_transform(crs = 32632)
 
-### 3. Define a Function for Spatial Join & Conflict Count for Multiple Buffers
+### Define a Function for Spatial Join & Conflict Count for Multiple Buffers
 count_conflicts <- function(household_sf, conflict_sf, wave_year) {
     # Filter household and conflict data by wave/year
     wave_household_sf <- household_sf |> filter(wave == wave_year$wave)
@@ -68,7 +68,7 @@ count_conflicts <- function(household_sf, conflict_sf, wave_year) {
     return(wave_data)
 }
 
-### 4. Apply Function to Each Wave
+###  Apply Function to Each Wave
 waves_info <- list(
     list(wave = 2, year = 2011),
     list(wave = 3, year = 2014),
@@ -80,7 +80,7 @@ combined_df_final <- waves_info |>
     map(~ count_conflicts(household_sf, conflict_sf_utm, .x)) |> 
     bind_rows()
 
-### 5. Extract Primary School-Aged Children (6-11 Years Old)
+###  Extract Primary School-Aged Children (6-11 Years Old)
 primary <- combined_df_final |> 
     filter(Age >= 6 & Age <= 11) |> 
     arrange(hhid, wave)
