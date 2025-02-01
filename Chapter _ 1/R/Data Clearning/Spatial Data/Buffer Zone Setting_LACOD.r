@@ -29,10 +29,10 @@ household_sf <- df_household |>
     st_transform(crs = 32632)
 
 # Drop missing values in conflict data
-df_ACRED <- df_ACRED |> drop_na(latitude, longitude)
+df_ACRED <- df_lacod |> drop_na(latitude, longitude)
 
 # Convert conflict data to sf object (WGS 84 CRS) and transform to UTM
-conflict_sf_utm <- df_ACRED |> 
+conflict_sf_utm <- df_lacod |> 
     st_as_sf(coords = c("latitude", "longitude"), crs = 4326) |> 
     st_transform(crs = 32632)
 
