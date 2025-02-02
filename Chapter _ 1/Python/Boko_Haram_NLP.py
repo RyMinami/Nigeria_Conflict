@@ -8,17 +8,11 @@ This script performs automated text classification of conflict-related events
 using Natural Language Processing (NLP) and Machine Learning*
  **Categorize Events Based on Keywords:**
    - Uses keyword matching to classify events into predefined categories:
-     - **Teacher or School**
-     - **Children and Student**
-     - **Kidnapping**
-     - **Bombing**
-     - **Strike and Clash**
-     - **Other** (default)
    - Converts categorical labels into numerical format for ML.
  **Filter Data for Specific Years:**
-   - Extracts events from **2010, 2011, 2013, 2014, 2015, 2016, 2018, 2019**.
+   - Extracts events from 2010, 2011, 2013, 2014, 2015, 2016, 2018, 2019
  **Train a Machine Learning Model:**
-   - Uses **TF-IDF Vectorization** for text representation.
+   - Uses TF-IDF Vectorization for text representation.
    - Trains a **Random Forest Classifier** to predict event categories.
 
 """
