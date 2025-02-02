@@ -7,7 +7,7 @@
  
 # Reads CSV files containing household geographic data (waves 1-4).
 # Converts the data into an `sf` object with geographic coordinates.
-# Transforms the coordinate system to UTM Zone 32N (EPSG: 32632) for Nigeria.
+# Transforms the coordinate system for Nigeria.
 # Plot the spatial data on a map of Nigeria.
 ################################################################################
 ##########################
