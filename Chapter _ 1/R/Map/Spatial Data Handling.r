@@ -4,12 +4,11 @@
 # SCRIPT: Convert CSV Files to Spatial (sf) Objects and Save as Shapefiles
 # AUTHOR: Ryuto Minami
 # DESCRIPTION: 
-# This script converts household survey data from CSV format into spatial (sf) 
-# 1. Reads CSV files containing household geographic data (waves 1-4).
-# 2. Checks for missing latitude and longitude columns to prevent errors.
-# 3. Converts the data into an `sf` object with geographic coordinates.
-# 4. Transforms the coordinate system to UTM Zone 32N (EPSG: 32632) for Nigeria.
-# 5. Plot the spatial data on a map of Nigeria.
+ 
+# Reads CSV files containing household geographic data (waves 1-4).
+# Converts the data into an `sf` object with geographic coordinates.
+# Transforms the coordinate system to UTM Zone 32N (EPSG: 32632) for Nigeria.
+# Plot the spatial data on a map of Nigeria.
 ################################################################################
 ##########################
 
