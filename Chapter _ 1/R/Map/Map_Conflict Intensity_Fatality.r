@@ -4,16 +4,11 @@
 # AUTHOR: Ryuto Minami
 # DATE: 2024-10-01
 # DESCRIPTION:
-# This script visualizes conflict intensity across Nigerian states using a 
-#
-# 1. Loads required libraries (`ggplot2`, `sf`, `ggspatial`).
-# 2. Ensures the `Conflict_Level` variable is a factor with predefined categories.
-# 3. Defines a color scale for different conflict intensity levels.
-# 4. Categorizes conflict events based on predefined breakpoints.
-# 5. Creates a **ggplot** map:
+
+# Creates a **ggplot** map:
 #    - Choropleth layer for conflict intensity using `geom_sf()`.
 #    - Proportional symbols representing fatalities using `geom_sf()`.
-# 6. Customizes the map appearance with appropriate legends and themes.
+# Customizes the map appearance with appropriate legends and themes.
 ################################################################################
 
 # Load required libraries
