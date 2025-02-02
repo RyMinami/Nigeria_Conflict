@@ -1,7 +1,6 @@
 
 """
 SCRIPT: Conflict Event Classification and Visualization
-AUTHOR: [Ryuto Minami]
 DESCRIPTION:
 This script processes and visualizes **conflict-related event data** 
 by performing the following steps:
