@@ -4,14 +4,12 @@
 # AUTHOR: [Ryuto Minami]
 # DATE: [2024-08-12]
 # DESCRIPTION:
-# This script performs the following tasks:
-# 1. **Loads household & conflict datasets** 
-# 2. **Prepares spatial data** (Convert to sf objects, handle missing values)
-# 3. **Filters data by waves & applies spatial joins**:
+# Prepares spatial data (Convert to sf objects, handle missing values)
+# Filters data by waves & applies spatial joins:
 #    - Finds **conflict events within 10 km, 20 km, and 50 km buffers** of households
 #    - Counts conflict events **in the last year** for each household
-# 4. **Merges conflict counts with household data**  
-# 5. **Extracts primary school-aged children (6-11 years old)**  
+# Merges conflict counts with household data  
+# Extracts primary school-aged children (6-11 years old)
 ################################################################################
 
 ### 1. Load Household & Conflict Data
