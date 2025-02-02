@@ -4,14 +4,8 @@ SCRIPT: Conflict Event Classification Using NLP and Machine Learning
 AUTHOR: [Ryuto Minami]
 DATE: [2024-09-15]
 DESCRIPTION:
-This script performs **automated text classification** of conflict-related events 
-using **Natural Language Processing (NLP) and Machine Learning**.
-It follows these steps:
-
- **Preprocess the Data:**
-   - Creates a dummy variable for **Boko Haram** mentions.
-   - Cleans and processes text for improved classification.
-
+This script performs automated text classification of conflict-related events 
+using Natural Language Processing (NLP) and Machine Learning*
  **Categorize Events Based on Keywords:**
    - Uses keyword matching to classify events into predefined categories:
      - **Teacher or School**
@@ -21,10 +15,8 @@ It follows these steps:
      - **Strike and Clash**
      - **Other** (default)
    - Converts categorical labels into numerical format for ML.
-
  **Filter Data for Specific Years:**
    - Extracts events from **2010, 2011, 2013, 2014, 2015, 2016, 2018, 2019**.
-
  **Train a Machine Learning Model:**
    - Uses **TF-IDF Vectorization** for text representation.
    - Trains a **Random Forest Classifier** to predict event categories.
