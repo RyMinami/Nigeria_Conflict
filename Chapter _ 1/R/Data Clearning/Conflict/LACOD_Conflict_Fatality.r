@@ -32,9 +32,9 @@ N_map <- st_read("pass/gadm41_NGA_2.shp")
 # Rename column for consistency
 N_map <- N_map |> rename(ADMIN2 = NAME_2)
 
-################################################################################
-### FUNCTION: Aggregate fatalities by district
-################################################################################
+
+### Aggregate fatalities by district
+
 aggregate_fatalities <- function(data, start_year, end_year) {
   data |> 
     filter(YEAR >= start_year, YEAR <= end_year) |> 
@@ -43,9 +43,9 @@ aggregate_fatalities <- function(data, start_year, end_year) {
     ungroup()
 }
 
-################################################################################
-### FUNCTION: Generate conflict map
-################################################################################
+
+###  Generate conflict map
+
 generate_conflict_map <- function(N_map, fatalities_df, title, filename) {
   # Merge fatalities with spatial data
   N_map <- left_join(N_map, fatalities_df, by = "ADMIN2")
@@ -65,17 +65,16 @@ generate_conflict_map <- function(N_map, fatalities_df, title, filename) {
   ggsave(filename = filename, plot = plot, width = 10, height = 8, dpi = 300)
 }
 
-################################################################################
+
 ### 1. Overall Fatalities (2009-2019)
-################################################################################
+
 fatalities_overall <- aggregate_fatalities(Nigeria_lacod, 2009, 2019)
 generate_conflict_map(N_map, fatalities_overall, 
                       title = "Figure 1: Fatalities by District in Nigeria (2009-2019)", 
                       filename = "pass/plot_overall.png")
 
-################################################################################
 ### 2. Fatalities per Wave
-################################################################################
+
 # Define wave time periods
 waves <- list(
   list("wave" = "Wave 1", "start_year" = 2009, "end_year" = 2010, "filename" = "pass/plot_wave1.png"),
@@ -92,9 +91,9 @@ for (wave in waves) {
                         filename = wave$filename)
 }
 
-################################################################################
+
 ### 3. Fatalities by Quantiles (2018-2019)
-################################################################################
+
 N_map_wave4 <- left_join(N_map, fatalities_wave, by = "ADMIN2")
 N_map_wave4$FATALITIES[is.na(N_map_wave4$FATALITIES)] <- 0
 
@@ -117,4 +116,3 @@ ggplot(N_map_wave4) +
 # Save the quintile plot
 ggsave(filename = "pass/plot_wave4_quintile.png", width = 10, height = 8, dpi = 300)
 
-############################################
