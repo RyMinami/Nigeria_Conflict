@@ -17,9 +17,9 @@ library(ggspatial)
 library(sf)
 library(RColorBrewer)
 
-################################################################################
+
 # Load and Filter Conflict Data
-################################################################################
+
 
 # Load conflict dataset
 full_conf_df <- read.csv("lacod_full.csv")
@@ -28,9 +28,6 @@ full_conf_df <- read.csv("lacod_full.csv")
 Nigeria_ACRED <- full_conf_df |> 
   filter(COUNTRY == "Nigeria", YEAR >= 2009, YEAR <= 2019)
 
-################################################################################
-###  Load and Process Shapefile Data
-################################################################################
 
 # Load Nigeria administrative boundaries shapefile
 N_map <- st_read("pass/gadm41_NGA_2.shp")
@@ -38,9 +35,7 @@ N_map <- st_read("pass/gadm41_NGA_2.shp")
 # Rename column for consistency
 N_map <- N_map |> rename(ADMIN2 = NAME_2)
 
-################################################################################
 ###  Function to Aggregate Fatalities by District
-################################################################################
 
 aggregate_fatalities <- function(data, start_year, end_year) {
   data |> 
@@ -50,9 +45,7 @@ aggregate_fatalities <- function(data, start_year, end_year) {
     ungroup()
 }
 
-################################################################################
 ### Function to Generate Conflict Maps
-################################################################################
 
 generate_conflict_map <- function(N_map, fatalities_df, title, filename) {
   # Merge fatalities with spatial data
@@ -73,9 +66,7 @@ generate_conflict_map <- function(N_map, fatalities_df, title, filename) {
   ggsave(filename = filename, plot = plot, width = 10, height = 8, dpi = 300)
 }
 
-################################################################################
 ### Generate Maps for Overall and Wave-Based Fatalities
-################################################################################
 
 # Overall Fatalities (2009-2019)
 fatalities_overall <- aggregate_fatalities(Nigeria_ACREDA, 2009, 2019)
@@ -99,9 +90,7 @@ for (wave in waves) {
                         filename = wave$filename)
 }
 
-################################################################################
 ### Fatalities by Quantiles (2018-2019)
-################################################################################
 
 # Merge wave 4 data for quantile analysis
 N_map_wave4 <- left_join(N_map, fatalities_wave, by = "ADMIN2")
