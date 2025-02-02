@@ -3,13 +3,10 @@
 # AUTHOR: Ryuto Minami
 # DATE: 2024-12-12
 # DESCRIPTION:
-# This script visualizes conflict intensity across Nigerian states and overlays 
-# school locations using both ggplot2 and tmap for static and interactive maps.
 #
 # STEPS:
-# Loads the required spatial libraries (`ggplot2`, `sf`, `ggspatial`, `tmap`).
 # Reads in polygon (N_map) and point (school_sf) spatial data.
-# Categorizes conflict intensity into five levels (Very Low → Very High).
+# Categorizes conflict intensity into five levels (Very Low - Very High).
 # Creates a **ggplot** static map with:
 #    - Conflict intensity (choropleth)
 #    - School locations (point overlay)
