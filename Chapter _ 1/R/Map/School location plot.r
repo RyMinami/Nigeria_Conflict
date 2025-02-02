@@ -4,17 +4,17 @@
 # DATE: 2024-12-12
 # DESCRIPTION:
 # This script visualizes conflict intensity across Nigerian states and overlays 
-# school locations using both **ggplot2** and **tmap** for static and interactive maps.
+# school locations using both ggplot2 and tmap for static and interactive maps.
 #
 # STEPS:
-# 1. Loads the required spatial libraries (`ggplot2`, `sf`, `ggspatial`, `tmap`).
-# 2. Reads in polygon (N_map) and point (school_sf) spatial data.
-# 3. Categorizes conflict intensity into five levels (Very Low → Very High).
-# 4. Creates a **ggplot** static map with:
+# Loads the required spatial libraries (`ggplot2`, `sf`, `ggspatial`, `tmap`).
+# Reads in polygon (N_map) and point (school_sf) spatial data.
+# Categorizes conflict intensity into five levels (Very Low → Very High).
+# Creates a **ggplot** static map with:
 #    - Conflict intensity (choropleth)
 #    - School locations (point overlay)
 #    - Aesthetic improvements (themes, legends, north arrow, scale).
-# 5. Uses **tmap** for an interactive OpenStreetMap visualization.
+# Uses **tmap** for an interactive OpenStreetMap visualization.
 #############################################
 
 # Load required libraries
