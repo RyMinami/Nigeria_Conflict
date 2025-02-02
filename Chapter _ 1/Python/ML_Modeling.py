@@ -4,8 +4,6 @@ SCRIPT: Conflict Event Classification - Model Comparison
 AUTHOR: [Ryuto Minami]
 DATE: [2024-09-17]
 DESCRIPTION:
-This script evaluates multiple **machine learning classifiers** for conflict 
-event classification. It follows these steps:
 
 1. **Define and Train Models**:
    - **Logistic Regression**
